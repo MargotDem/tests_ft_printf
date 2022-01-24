@@ -1,0 +1,38 @@
+printf("'%2$4c, %1$c'\n", 'f', 'j');
+'   j, f'
+
+printf("'%2$04c, %1$c'\n", 'f', 'j');
+warning: flag '0' results in undefined behavior with 'c' conversion specifier
+
+if you specify the arg nb you need to do it for all args
+
+printf("'%1$03d, %2$d'\n", 56, 37);
+'056, 37'
+
+printf("'%.5d'\n", 14);
+'00014'
+
+printf("rl: '%1$5.3s'\n", "coucou");
+rl: '  cou'
+
+printf("rl: '%-5.s'\n", "coucou");
+rl: '     '
+
+printf("rl: '%-5.4s'\n", "coucou");
+rl: 'couc '
+
+printf("rl: '%07d'\n", 589);
+rl: '0000589'
+
+but:
+printf("rl: '%07.5d'\n", 589);
+rl: '  00589'
+
+printf("rl: '%7d'\n", 589);
+rl: '    589'
+
+printf("rl: '%07d'\n", -58);
+rl: '-000058'
+
+printf("rl: '%07.d'\n", -58);
+rl: '    -58'
